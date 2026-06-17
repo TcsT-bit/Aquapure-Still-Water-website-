@@ -5,175 +5,454 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aquapure Still Water | Pure and Fresh Drinking Water</title>
 <meta name="description" content="Aquapure Still Water - Purified water refill, bottled water supply, and custom bottled water for events in Shushumela Ext 2.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --blue-dark: #0a2a5c;
-    --blue: #1e5aad;
-    --blue-light: #3a7bd5;
+    --blue-dark: #0d1b2a;
+    --blue: #1b4965;
+    --blue-light: #5fa8d3;
+    --accent: #00b4d8;
     --white: #ffffff;
+    --light-bg: #f8fafc;
   }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
-  body { background: var(--white); color: #333; line-height: 1.6; }
-  
+
+    * { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body { 
+    background: var(--white); 
+    color: #1e293b; 
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+
+  /* Header / Hero */
   header { 
-    background: linear-gradient(180deg, #e8f3ff 0%, var(--white) 100%); 
-    text-align: center; 
-    padding: 40px 20px 30px;
+    background: linear-gradient(135deg, #e0f7fa 0%, #f8fafc 100%);
+    padding: 30px 20px 60px;
+    position: relative;
+    overflow: hidden;
   }
-  .logo { width: 120px; margin-bottom: 15px; }
-  .hero-text { font-size: 2rem; font-weight: 700; color: var(--blue-dark); margin-top: 10px; }
-  .hero-text span { color: var(--blue); }
-  .tagline { margin: 15px 0 25px; color: #555; font-style: italic; }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,180,216,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .logo { 
+    width: 140px; 
+    margin-bottom: 20px; 
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+  }
+
+  .container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-text { 
+    font-size: 2.5rem; 
+    font-weight: 800; 
+    color: var(--blue-dark); 
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  .hero-text span { 
+    background: linear-gradient(90deg, var(--blue) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .tagline { 
+    font-size: 1.1rem;
+    color: #64748b; 
+    font-style: italic; 
+    margin-bottom: 30px;
+  }
+
   .hero-img { 
-    max-width: 280px; 
+    max-width: 320px; 
     width: 100%; 
-    margin-top: 20px; 
-    border-radius: 20px; 
-    box-shadow: 0 8px 25px rgba(30,90,173,0.2);
+    border-radius: 24px; 
+    box-shadow: 0 20px 50px rgba(27,73,101,0.2);
+    transition: transform 0.4s ease;
   }
-  
+
+  .hero-img:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: var(--blue);
     color: white;
-    padding: 12px 25px;
-    border-radius: 30px;
+    padding: 14px 28px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    margin: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(27,73,101,0.2);
   }
-  .btn:hover { background: var(--blue-light); }
-  .btn-whatsapp { background: #25D366; }
-  
+
+  .btn:hover { 
+    background: var(--blue-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(27,73,101,0.3);
+  }
+
+  .btn-whatsapp { 
+    background: #25D366; 
+    box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+  }
+
+  .btn-whatsapp:hover {
+    background: #22c55e;
+    box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+  }
+
+  /* Services Section */
   .services { 
     background: var(--blue-dark); 
     color: var(--white); 
-    padding: 40px 20px; 
-    border-top-left-radius: 40px; 
-    border-top-right-radius: 40px;
-    margin-top: -20px;
+    padding: 80px 20px; 
+    border-top-left-radius: 60px; 
+    border-top-right-radius: 60px;
+    margin-top: -30px;
+    position: relative;
   }
+
   .section-title { 
-    background: var(--blue); 
+    background: linear-gradient(90deg, var(--accent) 0%, var(--blue-light) 100%);
     display: inline-block; 
-    padding: 8px 20px; 
-    border-radius: 20px; 
-    margin-bottom: 25px;
-    font-weight: 600;
+    padding: 10px 24px; 
+    border-radius: 30px; 
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
-  .service-item { display: flex; gap: 15px; margin-bottom: 20px; align-items: flex-start; }
-  .service-icon { font-size: 1.5rem; }
-  
+
+  .services-inner { 
+    max-width: 1200px; 
+    margin: 0 auto;
+  }
+
+  .services-grid {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .service-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-5px);
+    border-color: var(--accent);
+  }
+
+  .service-icon { 
+    font-size: 2.5rem; 
+    margin-bottom: 15px;
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--accent);
+  }
+
+  /* Gallery */
   .gallery { 
-    margin-top: 25px; 
     display: grid; 
-    gap: 15px;
+    gap: 20px;
   }
+
   .gallery img { 
     width: 100%; 
-    border-radius: 15px; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+    height: 280px;
     object-fit: cover;
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+    transition: all 0.4s ease;
+    cursor: pointer;
   }
-  
-  .contact { padding: 40px 20px; background: var(--blue-dark); color: var(--white); }
-  .contact-item { display: flex; gap: 10px; margin-bottom: 12px; align-items: center; }
-  
-  .badges { display: flex; gap: 15px; justify-content: center; margin-top: 25px; flex-wrap: wrap; }
+
+  .gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 40px rgba(0,180,216,0.3);
+  }
+
+  /* Contact Section */
+  .contact { 
+    padding: 80px 20px; 
+    background: var(--light-bg); 
+    color: var(--blue-dark);
+  }
+
+  .contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 40px;
+  }
+
+  .contact-card {
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  }
+
+  .contact-item { 
+    display: flex; 
+    gap: 15px; 
+    margin-bottom: 20px; 
+    align-items: center;
+    font-size: 1.05rem;
+  }
+
+  .contact-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--blue-light) 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .badges { 
+    display: flex; 
+    gap: 15px; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+  }
+
   .badge { 
-    border: 2px solid var(--white); 
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+    color: white;
     border-radius: 50px; 
-    padding: 10px 20px; 
+    padding: 15px 25px; 
     display: flex; 
     align-items: center; 
-    gap: 8px;
+    gap: 10px;
     font-weight: 600;
+    box-shadow: 0 5px 20px rgba(27,73,101,0.2);
   }
-  
+
+  /* Footer */
   footer { 
     text-align: center; 
-    padding: 20px; 
-    background: #e8f3ff; 
-    color: var(--blue-dark); 
-    font-weight: 600;
-    letter-spacing: 1px;
+    padding: 30px 20px; 
+    background: var(--blue-dark); 
+    color: var(--white); 
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
   }
-  
+
+  /* Responsive */
   @media(min-width: 768px) {
-    .container { display: flex; align-items: center; justify-content: space-around; max-width: 1100px; margin: auto; gap: 40px; }
-    .services-inner { display: flex; gap: 40px; max-width: 1100px; margin: auto; }
-    .contact-inner { display: flex; justify-content: space-between; max-width: 1100px; margin: auto; }
-    .hero-text { font-size: 2.5rem; }
-    .gallery { grid-template-columns: 1fr 1fr 1fr; }
+    .hero-wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .hero-content {
+      text-align: left;
+      flex: 1;
+    }
+
+    .btn-group {
+      justify-content: flex-start;
+    }
+
+    .hero-text { 
+      font-size: 3.5rem; 
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery { 
+      grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .contact-inner {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media(min-width: 1024px) {
+    .gallery { 
+      grid-template-columns: repeat(4, 1fr); 
+    }
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in {
+    animation: fadeInUp 0.8s ease forwards;
   }
 </style>
 </head>
 <body>
 
 <header>
-  <img src="https://files.catbox.moe/f1dh44.jpg" alt="Aquapure Still Water Logo" class="logo">
   <div class="container">
-    <div>
-      <p class="hero-text">PURE AND FRESH<br><span>DRINKING WATER</span></p>
-      <p class="tagline">Pure by nature. Perfect for you.</p>
-      <a href="tel:0729574064" class="btn">📞 Call to Order</a>
-      <a href="https://wa.me/27729574064" class="btn btn-whatsapp">💬 WhatsApp Us</a>
+    <img src="https://files.catbox.moe/f1dh44.jpg" alt="Aquapure Still Water Logo" class="logo fade-in">
+    <div class="hero-wrapper">
+      <div class="hero-content fade-in">
+        <h1 class="hero-text">PURE AND FRESH<br><span>DRINKING WATER</span></h1>
+        <p class="tagline">Pure by nature. Perfect for you.</p>
+        <div class="btn-group">
+          <a href="tel:0729574064" class="btn">📞 Call to Order</a>
+          <a href="https://wa.me/27729574064" class="btn btn-whatsapp">💬 WhatsApp Us</a>
+        </div>
+      </div>
+      <img src="https://files.catbox.moe/84yxvh.jpg" alt="Aquapure Still Water Bottle" class="hero-img fade-in">
     </div>
-    <img src="https://files.catbox.moe/84yxvh.jpg" alt="Aquapure Still Water Bottle" class="hero-img">
   </div>
 </header>
 
 <section class="services">
   <div class="services-inner">
-    <div>
-      <div class="section-title">OUR SERVICES</div>
-      
-      <div class="service-item">
+    <div class="section-title">OUR SERVICES</div>
+    
+    <div class="services-grid">
+      <div class="service-card">
         <div class="service-icon">💧</div>
-        <div>
-          <h3>PURIFIED WATER REFILL</h3>
-          <p>High-quality purified water for your everyday needs.</p>
-        </div>
+        <h3>PURIFIED WATER REFILL</h3>
+        <p>High-quality purified water for your everyday needs. Clean, safe, and affordable.</p>
       </div>
       
-      <div class="service-item">
+      <div class="service-card">
         <div class="service-icon">🚰</div>
-        <div>
-          <h3>WE SUPPLY BOTTLED WATER</h3>
-          <p>Reliable supply of bottled water for homes, offices, and businesses.</p>
-        </div>
+        <h3>BOTTLED WATER SUPPLY</h3>
+        <p>Reliable supply of bottled water for homes, offices, schools, and businesses.</p>
       </div>
       
-      <div class="service-item">
-        <div class="service-icon">👥</div>
-        <div>
-          <h3>CUSTOM BOTTLED WATER FOR:</h3>
-          <p>Events, Weddings, Parties, Funerals and more.</p>
-        </div>
+      <div class="service-card">
+        <div class="service-icon">🎉</div>
+        <h3>CUSTOM BOTTLED WATER</h3>
+        <p>Personalized water bottles for events, weddings, parties, funerals and more.</p>
       </div>
     </div>
     
+    <div class="section-title">OUR PRODUCTS</div>
     <div class="gallery">
       <img src="https://files.catbox.moe/hdmlkp.jpg" alt="Aquapure Bottled Water Display">
       <img src="https://files.catbox.moe/zjszp8.jpg" alt="Aquapure Water Packs">
       <img src="https://files.catbox.moe/iakdw9.jpg" alt="Aquapure Water Packs on Stainless Table">
+      <img src="https://files.catbox.moe/6037ft.jpg" alt="Aquapure Water Products">
     </div>
   </div>
 </section>
 
 <section class="contact">
   <div class="contact-inner">
-    <div>
-      <div class="section-title">CONTACT US</div>
+    <div class="contact-card">
+      <div class="section-title" style="background: var(--blue-dark); color: white;">CONTACT US</div>
       
-      <div class="contact-item">📞 072 957 4064 / 076 935 9392</div>
-      <div class="contact-item">📍 Shushumela Ext 2, Next to Batubatse Primary School</div>
-      <div class="contact-item">🕘 9am – 19:00pm</div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <strong>Call Us</strong><br>
+          072 957 4064 / 076 935 9392
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <strong>Visit Us</strong><br>
+          Shushumela Ext 2, Next to Batubatse Primary School
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">🕘</div>
+        <div>
+          <strong>Hours</strong><br>
+          9:00 AM – 7:00 PM Daily
+        </div>
+      </div>
     </div>
     
-    <div class="badges">
-      <div class="badge">🕒 OPEN DAILY</div>
-      <div class="badge">🚚 FREE DELIVERY</div>
+    <div class="contact-card">
+      <div class="section-title" style="background: var(--blue-dark); color: white;">WHY CHOOSE US</div>
+      <div class="badges">
+        <div class="badge">🕒 OPEN DAILY</div>
+        <div class="badge">🚚 FREE DELIVERY</div>
+        <div class="badge">💧 100% PURE</div>
+      </div>
     </div>
   </div>
 </section>
