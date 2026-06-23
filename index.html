@@ -154,6 +154,12 @@
     box-shadow: 0 8px 25px rgba(37,211,102,0.4);
   }
 
+  .btn-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
   /* Services Section */
   .services { 
     background: var(--blue-dark); 
@@ -276,6 +282,12 @@
     flex-shrink: 0;
   }
 
+  .contact-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
   .badges { 
     display: flex; 
     gap: 15px; 
@@ -374,7 +386,10 @@
         <p class="tagline">Pure by nature. Perfect for you.</p>
         <div class="btn-group">
           <a href="tel:0729574064" class="btn">📞 Call to Order</a>
-          <a href="https://wa.me/27729574064" class="btn btn-whatsapp">💬 WhatsApp Us</a>
+          <a href="https://wa.me/27729574064" class="btn btn-whatsapp">
+            <img src="https://files.catbox.moe/w63qdk.jpg" alt="WhatsApp" class="btn-icon">
+            WhatsApp Us
+          </a>
         </div>
       </div>
       <img src="https://files.catbox.moe/84yxvh.jpg" alt="Aquapure Still Water Bottle" class="hero-img fade-in">
@@ -426,6 +441,16 @@
         <div>
           <strong>Call Us</strong><br>
           072 957 4064 / 076 935 9392
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">
+          <img src="https://files.catbox.moe/w63qdk.jpg" alt="WhatsApp">
+        </div>
+        <div>
+          <strong>WhatsApp</strong><br>
+          072 957 4064
         </div>
       </div>
       
